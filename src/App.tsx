@@ -1,8 +1,9 @@
+import { RouterProvider } from "react-router-dom";
+import router from "./pages/Router";
+
 function App() {
   return (
-    <>
-    <h1>Oi</h1>
-    </>
+    <RouterProvider router={router}/>
   )
 }
 
