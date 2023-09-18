@@ -1,7 +1,9 @@
 import { Search2Icon } from "@chakra-ui/icons";
-import { InputGroup, Box, InputLeftElement, Input, AbsoluteCenter } from "@chakra-ui/react";
+import { InputGroup, Box, InputLeftElement, Input, AbsoluteCenter, SimpleGrid, Center } from "@chakra-ui/react";
+import ListPokemon from "../../types/ListPokemon";
+import { PokemonCard } from "../PokemonCard";
 
-function ListComponent() {
+function ListComponent({ results }: ListPokemon) {
   return (
     <>
       <Box position={"relative"} bg="red.500" p={8} color={"white"} justifyContent={"center"}>
@@ -14,11 +16,13 @@ function ListComponent() {
           </InputGroup>
         </AbsoluteCenter>
       </Box>
-      <Box position={"relative"}>
-        <AbsoluteCenter>
-          
-        </AbsoluteCenter>
-      </Box>
+      <Center>
+        <Box maxW={1400} marginTop={10} marginBottom={10}>
+          <SimpleGrid  columns={5} gap={6}>
+            {results?.map((item) => (<PokemonCard {...item}/>))}
+          </SimpleGrid>  
+        </Box>
+      </Center>
     </>
   )
 }

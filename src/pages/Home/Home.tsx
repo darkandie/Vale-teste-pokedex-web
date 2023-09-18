@@ -5,12 +5,10 @@ import { useGetAllPokemonsQuery } from "../../store/services/PokemonApi";
 function Home() {
   const { data } = useGetAllPokemonsQuery();
 
-  console.log(data, "data");
-
   return (
     <>
       <Header />
-      <ListComponent />
+      <ListComponent results={data?.results}/>
     </>  
   )
 }
