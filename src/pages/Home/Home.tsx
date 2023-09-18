@@ -1,7 +1,12 @@
+import { Header } from "../../components/Header";
+import { ListComponent } from "../../components/ListComponent";
 
 function Home() {
   return (
-    <div>Home</div>
+    <>
+      <Header />
+      <ListComponent />
+    </>  
   )
 }
 
