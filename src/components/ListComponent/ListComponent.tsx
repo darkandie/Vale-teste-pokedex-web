@@ -19,7 +19,7 @@ function ListComponent({ results }: ListPokemon) {
       <Center>
         <Box maxW={1400} marginTop={10} marginBottom={10}>
           <SimpleGrid  columns={5} gap={6}>
-            {results?.map((item) => (<PokemonCard {...item}/>))}
+            {results?.map((item) => (<PokemonCard key={item.name} {...item}/>))}
           </SimpleGrid>  
         </Box>
       </Center>
